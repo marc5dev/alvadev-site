@@ -1,0 +1,16 @@
+{
+  // This file tells Cloudflare how to run your site.
+  // "name" = the Worker's name inside your Cloudflare account.
+  "name": "alvadev-site",
+
+  // A date that locks in Cloudflare's runtime behavior. Leave as is.
+  "compatibility_date": "2026-08-01",
+
+  // The folder that gets served as your website.
+  // public/index.html        -> alvadev.com/
+  // public/page1/index.html  -> alvadev.com/page1
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

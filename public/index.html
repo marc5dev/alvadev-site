@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>alvadev</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="/">alvadev<span>.com</span></a>
+    <nav>
+      <a href="/page1">page1</a>
+      <button id="theme-toggle" aria-label="Switch color theme">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">deployed from github · served by cloudflare</p>
+    <h1>Hello, this is live.</h1>
+    <p class="lede">
+      Edit this page in the GitHub repo, push to <code>main</code>,
+      and this text updates on its own. That is the whole pipeline.
+    </p>
+
+    <div class="cards">
+      <a class="card" href="/page1">
+        <h2>/page1</h2>
+        <p>A subpage. It lives in <code>public/page1/index.html</code> in the repo.</p>
+      </a>
+      <a class="card" href="https://app.alvadev.com">
+        <h2>app.alvadev.com</h2>
+        <p>The little web app running on the Hetzner VPS. Different machine, same domain.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>alvadev · <span id="year"></span> · this footer year is set by script.js</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
