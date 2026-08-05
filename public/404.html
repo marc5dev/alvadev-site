@@ -1,16 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>404 · alvadev</title>
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#05060b">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=1">
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
 </head>
 <body>
-  <main style="padding-top:16vh">
-    <p class="eyebrow">404</p>
-    <h1>No page here.</h1>
-    <p class="lede">There is no file for this address in the repo. <a href="/">Back to the homepage.</a></p>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="simple">
+    <div>
+      <div class="big" aria-hidden="true">404</div>
+      <h1>No page at this address.</h1>
+      <p>The URL points at nothing — not even a hand-written file.</p>
+      <a class="btn btn-primary" href="/">
+        Back to the homepage
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </main>
 </body>
 </html>
