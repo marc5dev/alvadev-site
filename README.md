@@ -24,22 +24,20 @@ from the footer of every page and from the ⌘K palette.
 
 Opening a Facebook business page or using the WhatsApp Business API means
 someone at Meta reads this site, and business verification compares it against
-your registration documents. Three things still need real values:
+your registration documents.
 
-1. **The NIF / NIE number.** `public/impressum/index.html` has one
-   `<span class="todo">` marker left, on the tax identification line. It is
-   deliberately loud (amber, dashed border) so it cannot ship unnoticed.
-   Put your real NIE there — the one on your TIE card or NIE certificate.
-   Never a made-up one: this is the field Meta checks against the documents
-   you upload, and a wrong number fails verification.
-2. **Check the address against your paperwork.** It currently reads
-   Edificio Lanzadera · Marina de Empresas, Carrer del Moll de la Duana, s/n,
-   46024 València. If the address on your registration or tax documents is
-   written differently, match those instead — Meta compares the two.
-3. **Domain verification.** `public/index.html` has a commented-out
-   `<meta name="facebook-domain-verification">` near the top. Get the token
-   from Business Suite → Brand safety and suitability → Domains, paste it in,
-   uncomment, push. Meta reads the root URL, so that one page is enough.
+The Impressum is complete — name, Marina de Empresas address, phone, NIE.
+Two things are worth checking, and one is still missing:
+
+1. **The address and NIE must match your paperwork exactly.** Meta compares
+   the two. If your registration or tax documents write the street the
+   Castilian way (Muelle de la Aduana s/n) or use a different building line,
+   match the documents rather than this page.
+2. **Domain verification is still open.** `public/index.html` has a
+   commented-out `<meta name="facebook-domain-verification">` near the top.
+   Get the token from Business Suite → Brand safety and suitability → Domains,
+   paste it in, uncomment, push. Meta reads the root URL, so that one page is
+   enough.
 
 The URLs Meta asks for in the app dashboard:
 
