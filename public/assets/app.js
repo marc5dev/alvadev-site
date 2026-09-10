@@ -307,6 +307,10 @@
       { label: "Go to — Contact", hint: "04", ico: "04", kw: "contact email hire", run: function () { go("#contact"); } },
       { label: "Copy email address", hint: "⏎", ico: "@", kw: "mail copy " + EMAIL, run: copyEmail },
       { label: "Open GitHub profile", hint: "↗", ico: "gh", kw: "github code source", run: function () { window.open(GITHUB, "_blank", "noopener"); } },
+      { label: "Legal — Impressum", hint: "↗", ico: "§", kw: "impressum imprint legal notice address company owner", run: function () { location.href = "/impressum"; } },
+      { label: "Legal — Privacy policy", hint: "↗", ico: "§", kw: "privacy policy datenschutz gdpr data cookies tracking", run: function () { location.href = "/privacy"; } },
+      { label: "Legal — Terms of use", hint: "↗", ico: "§", kw: "terms conditions agb use", run: function () { location.href = "/terms"; } },
+      { label: "Legal — Delete my data", hint: "↗", ico: "§", kw: "delete data deletion erase gdpr whatsapp remove", run: function () { location.href = "/data-deletion"; } },
       {
         label: "Toggle aurora background", hint: "✦", ico: "✦", kw: "aurora webgl background animation",
         run: function () {
