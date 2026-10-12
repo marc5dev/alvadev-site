@@ -17,8 +17,9 @@
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches || INSTANT;
   var FINE = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  var EMAIL = ["hello", "alvadev.com"].join("@");
-  var GITHUB = "https://github.com/marc5dev";
+  function getEmail() {
+    return String.fromCharCode(104, 101, 108, 108, 111, 64, 97, 108, 118, 97, 100, 101, 118, 46, 99, 111, 109);
+  }
 
   /* ---------- entrance: flip .is-loaded once the font is in (or fast) ---------- */
   function loaded() { root.classList.add("is-loaded"); }
@@ -254,11 +255,26 @@
     toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2100);
   }
   function copyEmail() {
-    var done = function () { showToast("<span class=\"grad\">" + EMAIL + "</span>&nbsp; copied to clipboard ✓"); };
+    var email = getEmail();
+    var done = function () { showToast("<span class=\"grad\">" + email + "</span>&nbsp; copied to clipboard ✓"); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(EMAIL).then(done, function () { showToast(EMAIL); });
-    } else { showToast(EMAIL); }
+      navigator.clipboard.writeText(email).then(done, function () { showToast(email); });
+    } else { showToast(email); }
   }
+  $$("[data-email-link]").forEach(function (el) {
+    el.addEventListener("click", function () { location.href = "mailto:" + getEmail(); });
+  });
+  $$("[data-reveal-email]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      var address = doc.getElementById(el.getAttribute("aria-controls"));
+      if (!address) return;
+      var open = address.hidden;
+      address.textContent = open ? getEmail() : "";
+      address.hidden = !open;
+      el.setAttribute("aria-expanded", open ? "true" : "false");
+      el.textContent = open ? "Hide email address" : "Show email address";
+    });
+  });
   $$("[data-copy-email]").forEach(function (el) {
     el.addEventListener("click", function (e) { e.preventDefault(); copyEmail(); });
   });
@@ -276,8 +292,7 @@
       { label: "Go to — Process", hint: "02", ico: "02", kw: "process how", run: function () { go("#process"); } },
       { label: "Go to — Toolbox", hint: "03", ico: "03", kw: "stack tools tech", run: function () { go("#stack"); } },
       { label: "Go to — Contact", hint: "04", ico: "04", kw: "contact email hire", run: function () { go("#contact"); } },
-      { label: "Copy email address", hint: "⏎", ico: "@", kw: "mail copy " + EMAIL, run: copyEmail },
-      { label: "Open GitHub profile", hint: "↗", ico: "gh", kw: "github code source", run: function () { window.open(GITHUB, "_blank", "noopener"); } },
+      { label: "Copy email address", hint: "⏎", ico: "@", kw: "mail copy email", run: copyEmail },
       {
         label: "Toggle aurora background", hint: "✦", ico: "✦", kw: "aurora webgl background animation",
         run: function () {

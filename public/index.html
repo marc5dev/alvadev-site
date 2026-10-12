@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
   <link rel="preload" href="/assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/style.css?v=1">
+  <link rel="stylesheet" href="/assets/style.css?v=2">
 
   <script>document.documentElement.classList.replace("no-js", "js");</script>
 
@@ -91,7 +91,7 @@
       <a class="menu-link" href="#process"><small>02</small> Process</a>
       <a class="menu-link" href="#stack"><small>03</small> Toolbox</a>
       <a class="menu-link" href="#contact"><small>04</small> Contact</a>
-      <p class="menu-foot">hello@alvadev.com</p>
+      <p class="menu-foot">Let's build something.</p>
     </nav>
   </div>
 
@@ -110,9 +110,9 @@
           </h1>
 
           <p class="hero-sub stage" style="--d:.4s">
-            alvadev is the one-person studio of <strong>Marcus</strong> — fast, hand-crafted
-            software with personality. No framework bloat, no template feel. Just clean
-            code that ships in seconds.
+            alvadev builds fast, hand-crafted software with personality — from websites
+            and web apps to AI integrations and autonomous multi-agent workflows.
+            Clean code, thoughtful design, and care for your data.
           </p>
 
           <div class="hero-cta stage" style="--d:.52s">
@@ -215,9 +215,9 @@
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.7 4.6L18 9.2l-4.3 1.7L12 15.5l-1.7-4.6L6 9.2l4.3-1.6L12 3z" stroke="url(#icon-grad)" stroke-width="1.6" stroke-linejoin="round"/><path d="M18.5 15l.9 2.3 2.1.8-2.1.8-.9 2.3-.8-2.3-2.2-.8 2.2-.8.8-2.3z" stroke="url(#icon-grad)" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </div>
-            <h3>AI Integration</h3>
-            <p>LLMs where they genuinely help — assistants, content pipelines, smart search. Engineered into the product, not bolted on.</p>
-            <div class="card-tags"><span>LLM APIs</span><span>RAG</span><span>Agents</span></div>
+            <h3>AI Integration &amp; Agent Workflows</h3>
+            <p>AI assistants, smart search, and autonomous multi-agent workflows. Agents coordinate tasks, use tools, and connect systems — with clear boundaries and human oversight where it matters.</p>
+            <div class="card-tags"><span>LLM APIs</span><span>RAG</span><span>Multi-agent workflows</span></div>
           </article>
         </div>
       </div>
@@ -262,7 +262,8 @@
         <header class="sec-head reveal">
           <p class="sec-eyebrow">03 — Toolbox</p>
           <h2 class="sec-title">Boring where it should be, <span class="grad">exciting where it can be</span></h2>
-          <p class="sec-sub">Proven web fundamentals first, clever tricks second. This is what gets used and enjoyed:</p>
+          <p class="sec-sub">Proven web fundamentals first, clever tricks second. Practical tools, chosen with care.</p>
+          <p class="sec-sub"><strong>Privacy &amp; data security.</strong> I handle personal data with care and work with German hosting companies and providers with data centers in Germany. Data protection is part of the technical choices from the start.</p>
         </header>
       </div>
 
@@ -290,15 +291,17 @@
           Tell me what you want to build — I'll tell you how, and how fast it can be live.
         </p>
         <div class="contact-cta reveal" style="--d:.18s">
-          <a class="btn btn-primary magnetic" href="mailto:hello@alvadev.com">
+          <button type="button" class="btn btn-primary magnetic email-action" data-email-link>
             Say hello
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <button class="btn btn-ghost magnetic" data-copy-email>Copy address</button>
+          </button>
+          <button type="button" class="btn btn-ghost magnetic email-action" data-copy-email>Copy address</button>
         </div>
         <p class="contact-email reveal" style="--d:.26s">
-          the classic way: <a href="mailto:hello@alvadev.com">hello@alvadev.com</a>
+          <button type="button" class="email-action" data-reveal-email aria-controls="contact-address" aria-expanded="false">Show email address</button>
+          <span class="contact-address" id="contact-address" hidden></span>
         </p>
+        <noscript><p class="contact-email">Email: hello [at] alvadev [dot] com</p></noscript>
       </div>
     </section>
   </main>
@@ -310,7 +313,6 @@
         <a href="#work">Work</a>
         <a href="#process">Process</a>
         <a href="#stack">Toolbox</a>
-        <a href="https://github.com/marc5dev" rel="noopener" target="_blank">GitHub ↗</a>
         <a href="https://app.alvadev.com" rel="noopener" target="_blank">app.alvadev.com ↗</a>
       </nav>
       <a class="to-top" href="#main" aria-label="Back to top">
@@ -336,7 +338,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="/assets/aurora.js?v=1" defer></script>
-  <script src="/assets/app.js?v=1" defer></script>
+  <script src="/assets/app.js?v=2" defer></script>
 </body>
 </html>
 

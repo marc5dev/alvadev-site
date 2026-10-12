@@ -590,12 +590,13 @@ html.js .step.in::before, html.no-js .step::before { transform: scaleX(1); }
 .contact-email {
   font: 500 0.95rem var(--font-m); color: var(--tx-2);
 }
-.contact-email a {
+.contact-email [data-reveal-email] {
   color: var(--tx); text-decoration: underline;
   text-decoration-color: var(--c2); text-underline-offset: 5px;
   transition: color 0.2s ease;
 }
-.contact-email a:hover { color: var(--c1); }
+.contact-email [data-reveal-email]:hover { color: var(--c1); }
+.contact-address:not([hidden]) { display: block; margin-top: 12px; }
 
 /* ---------- footer ---------- */
 .footer {
@@ -733,6 +734,7 @@ html.js .step.in::before, html.no-js .step::before { transform: scaleX(1); }
 /* ---------- no-js ---------- */
 html.no-js .hline-in, html.no-js .stage { opacity: 1; transform: none; }
 html.no-js .glow, html.no-js .kbd-hint { display: none; }
+html.no-js .email-action { display: none; }
 html.no-js .nav-links { display: flex; } /* keep anchors reachable */
 
 /* ---------- reduced motion / instant mode ---------- */
