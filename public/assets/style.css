@@ -578,31 +578,6 @@ html.js .step.in::before, html.no-js .step::before { transform: scaleX(1); }
 .tag:nth-child(3n + 2) i { background: var(--c2); }
 .tag:nth-child(3n + 3) i { background: var(--c3); }
 
-/* ---------- proof of craft ---------- */
-.craft { position: relative; }
-.craft-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.stat {
-  border: 1px solid var(--line); border-radius: var(--r);
-  padding: 28px 26px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent);
-}
-.stat-num {
-  font: 700 clamp(2.5rem, 4.4vw, 3.4rem)/1 var(--font-d); letter-spacing: -0.03em;
-  background: var(--grad);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  display: flex; align-items: baseline; gap: 4px;
-}
-.stat-num small { font-size: 0.45em; font-weight: 600; }
-.stat-label { margin-top: 10px; font: 500 0.8rem/1.5 var(--font-m); color: var(--tx-3); }
-.craft-note {
-  margin-top: 26px; color: var(--tx-2); font-size: 0.95rem; max-width: 68ch;
-}
-.craft-note code {
-  font: 500 0.85em var(--font-m); color: var(--c1);
-  background: var(--glass); border: 1px solid var(--line);
-  border-radius: 6px; padding: 2px 7px;
-}
-
 /* ---------- contact ---------- */
 .contact { text-align: center; }
 .contact-title {
@@ -736,7 +711,6 @@ html.js .step.in::before, html.no-js .step::before { transform: scaleX(1); }
   .scroll-hint { display: none; }
   .cards { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
-  .craft-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 880px) {
@@ -748,8 +722,6 @@ html.js .step.in::before, html.no-js .step::before { transform: scaleX(1); }
   :root { --pad: 20px; }
   .cards { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
-  .craft-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .stat { padding: 20px 18px; }
   .hero-cta .btn { flex: 1 1 auto; }
   .float-chip.fc2 { left: -6px; bottom: 44px; }
   .editor-body { min-height: 300px; }
@@ -787,3 +759,4 @@ html.instant * , html.instant *::before, html.instant *::after {
 html.instant.js .hline-in, html.instant.js .stage, html.instant.js .reveal { opacity: 1; transform: none; animation: none; }
 html.instant .caret, html.instant .chip .dot, html.instant .editor-body .cursor { animation: none; opacity: 1; }
 html.instant .hero { min-height: 0; }
+

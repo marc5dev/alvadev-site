@@ -1,7 +1,7 @@
 /* alvadev — app.js
    Every interaction on this site, hand-rolled in vanilla JS:
    entrance choreography, text scramble, a self-typing editor, scroll reveals,
-   3D tilt, magnetic buttons, counters, a ⌘K palette and a clipboard toast.
+   3D tilt, magnetic buttons, a ⌘K palette and a clipboard toast.
    ~zero dependencies. */
 
 (function () {
@@ -202,35 +202,6 @@
     toReveal.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---------- counters ---------- */
-  var counters = $$("[data-count]");
-  if (counters.length) {
-    var finalize = function (el) { el.textContent = el.getAttribute("data-count") || "0"; };
-    var animate = function (el) {
-      el.setAttribute("data-started", "1");
-      var to = parseFloat(el.getAttribute("data-count")) || 0;
-      var from = parseFloat(el.getAttribute("data-from") || "0");
-      var t0 = performance.now(), dur = 1500;
-      var step = function (now) {
-        var p = Math.min(1, (now - t0) / dur);
-        var e = 1 - Math.pow(1 - p, 3);
-        el.textContent = String(Math.round(from + (to - from) * e));
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
-    if (REDUCED || !("IntersectionObserver" in window)) {
-      counters.forEach(finalize);
-    } else {
-      var cio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { animate(en.target); cio.unobserve(en.target); }
-        });
-      }, { threshold: 0.5 });
-      counters.forEach(function (el) { cio.observe(el); });
-    }
-  }
-
   /* ---------- 3D tilt + glare ---------- */
   if (FINE && !REDUCED) {
     $$(".tilt").forEach(function (card) {
@@ -411,3 +382,4 @@
     console.log("Curious how it's made? Every line is readable: view-source is the docs.\nTry ⌘K, too.");
   } catch (_) {}
 })();
+
